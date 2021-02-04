@@ -1,0 +1,9 @@
+.BlogCardItem {
+    display: flex;
+    margin: 20px;
+    padding-bottom: 0;
+}
+
+.Media {
+    width: 160px;
+}
