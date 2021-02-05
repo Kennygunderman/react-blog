@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import BlogItem from '../components/BlogItem/BlogItem';
-import FeaturedBlogItem from '../components/FeaturedBlogItem/FeaturedBlogItem';
+import BlogItem from '../../components/BlogItem/BlogItem';
+import FeaturedBlogItem from '../../components/FeaturedBlogItem/FeaturedBlogItem';
 import Grid from '@material-ui/core/Grid';
-import firebase from "../db/firebase";
+import firebase from "../../db/firebase";
 import classes from './Blog.css'
 
 class Blog extends Component {
@@ -14,11 +14,16 @@ class Blog extends Component {
     postsRef = firebase.firestore().collection("posts");
 
     componentDidMount() {
+        console.log(this.props);
         this.setState({ isLoading: true });
         this.postsRef.onSnapshot((querySnapshot) => {
             const items = [];
             querySnapshot.forEach((doc) => {
-                items.push(doc.data());
+                const item = {
+                    ...doc.data(),
+                    id: doc.id
+                }
+                items.push(item);
             });
             this.setState({ isLoading: false, posts: items });
         });
@@ -32,19 +37,24 @@ class Blog extends Component {
             }
             p.date = new Date(post.date.seconds * 1000); //modify date to be used by component
             return (
-                <Grid item xs={12} md={6}>
-                    <BlogItem item={p} />
+                <Grid item xs={12} md={6} key={p.id}>
+                    <BlogItem item={p} clickHandler={this.handleBlogItemClicked} />
                 </Grid>
             )
         });
 
         //set featured post to most recent post
         if (blogItems.length > 0 && sortedPosts.length > 0) blogItems[0] =
-            <Grid item xs={12}>
-                <FeaturedBlogItem item={sortedPosts[0]} />
+            <Grid item xs={12} key={sortedPosts[0].id}>
+                <FeaturedBlogItem item={sortedPosts[0]} clickHandler={this.handleBlogItemClicked} />
             </Grid>
 
         return blogItems;
+    }
+
+    //Show detail
+    handleBlogItemClicked = () => {
+        this.props.history.push('/detail');
     }
 
     render() {

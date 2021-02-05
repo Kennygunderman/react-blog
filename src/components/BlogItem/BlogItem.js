@@ -4,12 +4,8 @@ import classes from './BlogItem.css';
 import PropTypes from 'prop-types';
 import { createDescription } from '../../util/StringUtils'
 
-const handleClick = () => {
-    console.log("Card Clicked")
-}
-
 const blogItem = (props) => (
-    <Card onClick={handleClick} className={classes.BlogCardItem}>
+    <Card onClick={props.clickHandler} className={classes.BlogCardItem}>
         <Hidden xsDown>
             <CardMedia className={classes.Media} image={props.item.image} title='Image Title' />
         </Hidden>

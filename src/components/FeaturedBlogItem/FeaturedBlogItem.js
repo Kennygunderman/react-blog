@@ -3,12 +3,8 @@ import PropTypes from 'prop-types';
 import classes from './FeaturedBlogItem.css';
 import { createDescription } from '../../util/StringUtils'
 
-const handleClick = () => {
-    console.log("Featured Item Clicked")
-}
-
 const featuredBlogItem = (props) => (
-    <Card onClick={handleClick} className={classes.FeaturedBlogCardItem}>
+    <Card onClick={props.clickHandler} className={classes.FeaturedBlogCardItem}>
         <CardMedia image={props.item.image} title={'Thumbnail'}>
             <CardActionArea className={classes.Overlay}>
                 <CardContent className={classes.CardContent}>
