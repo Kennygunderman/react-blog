@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { createDescription } from '../../util/StringUtils'
 
 const blogItem = (props) => (
-    <Card onClick={props.clickHandler} className={classes.BlogCardItem}>
+    <Card onClick={() => props.clickHandler(props.item)} className={classes.BlogCardItem}>
         <Hidden xsDown>
             <CardMedia className={classes.Media} image={props.item.image} title='Image Title' />
         </Hidden>

@@ -6,6 +6,7 @@ class BlogDetail extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
         this.setState({ item: this.props.history.location.state.item })
     }
 

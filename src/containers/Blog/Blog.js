@@ -3,8 +3,6 @@ import BlogItem from '../../components/BlogItem/BlogItem';
 import FeaturedBlogItem from '../../components/FeaturedBlogItem/FeaturedBlogItem';
 import Grid from '@material-ui/core/Grid';
 import firebase from "../../db/firebase";
-import classes from './Blog.css'
-
 class Blog extends Component {
     state = {
         isLoading: false,
@@ -53,13 +51,13 @@ class Blog extends Component {
     }
 
     //Show detail
-    handleBlogItemClicked = () => {
-        this.props.history.push('/detail');
+    handleBlogItemClicked = (item) => {
+        this.props.history.push({ pathname: '/detail', state: { item: item } });
     }
 
     render() {
         return (
-            <div className={classes.Blog}>
+            <div>
                 <Grid container spacing={0}>
                     {this.createBlogFeed()}
                 </Grid>
