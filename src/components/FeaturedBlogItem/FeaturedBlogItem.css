@@ -12,7 +12,7 @@
 }
 
 .Desc {
-    margin-top: 24px;
+    padding-top: 24px;
     width: 50%;
     color: #f0f0f0;
 }
@@ -23,7 +23,7 @@
     }
     
     .Desc {
-        margin-top: 24px;
+        padding-top: 24px;
         width: 100%;
     }
 }
@@ -33,6 +33,6 @@
 }
 
 .ContinueReadingText {
-    margin-top: 24px;
-    color:#FFFFFF;
+    padding-top: 24px;
+    color: #FFFFFF;
 }
