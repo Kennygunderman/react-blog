@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BlogItem from '../../components/BlogItem/BlogItem';
 import FeaturedBlogItem from '../../components/FeaturedBlogItem/FeaturedBlogItem';
 import Grid from '@material-ui/core/Grid';
-import firebase from "../../db/firebase";
+import firebase from "../../firebase";
 class Blog extends Component {
     state = {
         isLoading: false,

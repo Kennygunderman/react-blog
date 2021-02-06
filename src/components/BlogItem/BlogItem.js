@@ -23,7 +23,7 @@ const blogItem = (props) => (
                 <Typography variant="body1" paragraph>
                     {createDescription(stripHTML(props.item.summary), 100)}
                 </Typography>
-                <Typography variant="body1" color="primary">
+                <Typography variant="body1" className={classes.ContinueReadingText}>
                     Continue reading...
                 </Typography>
             </CardContent>
