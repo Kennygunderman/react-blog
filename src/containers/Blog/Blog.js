@@ -57,7 +57,7 @@ class Blog extends Component {
 
     render() {
         return (
-            <Grid container spacing={0}>
+            <Grid container spacing={3}>
                 {this.createBlogFeed()}
             </Grid>
         );
