@@ -6,21 +6,24 @@ import { createDescription, stripHTML } from '../../util/StringUtils'
 
 const blogItem = (props) => (
     <Card onClick={() => props.clickHandler(props.item)} className={classes.BlogCardItem}>
-        <Hidden xsDown>
-            <CardMedia className={classes.Media} image={props.item.image} title='Image Title' />
-        </Hidden>
+        {
+            props.hideImg != null && props.hideImg === true ? null :
+                <Hidden xsDown>
+                    <CardMedia className={classes.Media} image={props.item.image} title='Image Title' />
+                </Hidden>
+        }
         <CardActionArea>
             <CardContent>
-                <Typography component="h2" variant="h5">
+                <Typography variant="h6">
                     {props.item.title}
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
                     <Moment format="MMM. D, YYYY">{props.item.date}</Moment>
                 </Typography>
-                <Typography variant="subtitle1" paragraph>
+                <Typography variant="body1" paragraph>
                     {createDescription(stripHTML(props.item.summary), 100)}
                 </Typography>
-                <Typography variant="subtitle1" color="primary">
+                <Typography variant="body1" color="primary">
                     Continue reading...
                 </Typography>
             </CardContent>

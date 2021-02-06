@@ -6,10 +6,11 @@
     background-color: #7e7e7e;
 }
 
-.Text {
-    font-size: 13px;
+.DetailSpacing {
+    margin-right: 16px;
 }
 
-.Date {
-    margin-bottom: 8px;
+.BlogCardSpacing {
+    margin-bottom: 16px;
 }
+

@@ -1,0 +1,15 @@
+.Container {
+    margin-top: 16px;
+}
+
+.ProfileImg {
+    float: left;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.Container {
+    margin-left: 66px;
+}

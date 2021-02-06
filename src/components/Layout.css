@@ -3,9 +3,16 @@
     margin-left: 10%;
 }
 
+.Footer {
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+}
+
+
 @media (max-width: 1080px) {
     .Container {
-        max-width: 100%;
-        margin-left: 0;
+        max-width: 90%;
+        margin-left: 5%;
     }
 }

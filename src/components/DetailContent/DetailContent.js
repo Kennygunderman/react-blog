@@ -13,7 +13,7 @@ const detailContent = (props) => (
         <Typography variant="subtitle1" color="textSecondary" className={classes.Date}>
             <Moment format="MMM. D, YYYY">{props.date}</Moment>
         </Typography>
-        <div>{props.children}</div>
+        <div className={classes.Text}>{props.children}</div>
     </Aux>
 )
 
