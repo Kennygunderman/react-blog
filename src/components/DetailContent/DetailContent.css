@@ -1,0 +1,11 @@
+.Divider {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    height: 1px;
+    background-color: #7e7e7e;
+}
+
+.Date {
+    margin-bottom: 8px;
+}

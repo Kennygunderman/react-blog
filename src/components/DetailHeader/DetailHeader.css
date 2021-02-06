@@ -1,0 +1,25 @@
+.DetailHeader {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.Header {
+    width: 50%;
+    color: #f0f0f0 
+}
+
+@media (max-width: 720px) {
+    .Header {
+        width: 100%;
+    }
+    
+    .Desc {
+        padding-top: 24px;
+        width: 100%;
+    }
+}
+
+.Overlay {
+    padding: 80px;
+    background-color: rgba(0, 0, 0, 0.3);
+}

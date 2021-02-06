@@ -7,4 +7,8 @@ const createDescription = (str, length) => {
     return str;
 }
 
-export { createDescription }
+const stripHTML = (htmlStr) => {
+    return htmlStr.replace(/<\/?[^>]+(>|$)/g, "");
+}
+
+export { createDescription, stripHTML }
