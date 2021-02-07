@@ -9,7 +9,7 @@ function App() {
   return (
     <Layout>
       <Switch>
-        <Route path="/detail" component={BlogDetail} />
+        <Route path="/detail/:blogId" component={BlogDetail} />
         <Route path="/" exact component={Blog} />
       </Switch>
     </Layout >

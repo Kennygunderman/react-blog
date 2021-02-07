@@ -1,3 +1,3 @@
-const AUTH = 'AUTH';
+const auth = 'AUTH';
 
-export default { AUTH }
+export { auth as AUTH }

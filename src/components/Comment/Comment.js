@@ -11,7 +11,7 @@ const comment = (props) => (
             <Typography variant='body1' color="textSecondary" className={classes.Date}>
                 <Moment format="MMM. D, YYYY">{props.comment.date}</Moment>
             </Typography>
-            <Typography variant='body1'>
+            <Typography variant='body1' className={classes.Text}>
                 {props.comment.comment}
             </Typography>
         </div>

@@ -12,7 +12,6 @@ class Blog extends Component {
     postsRef = firebase.firestore().collection("posts");
 
     componentDidMount() {
-        console.log(this.props);
         this.setState({ isLoading: true });
         this.postsRef.onSnapshot((querySnapshot) => {
             const items = [];
@@ -54,7 +53,7 @@ class Blog extends Component {
 
     //Show detail
     handleBlogItemClicked = (item) => {
-        this.props.history.push({ pathname: '/detail', state: { item: item } });
+        this.props.history.push({ pathname: `/detail/${item.id}`, state: { item: item } });
     }
 
     render() {

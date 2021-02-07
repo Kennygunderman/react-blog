@@ -10,3 +10,7 @@
     margin-top: 16px;
     margin-left: 66px;
 }
+
+.Text {
+    overflow-wrap: break-word !important;
+}

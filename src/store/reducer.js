@@ -1,4 +1,4 @@
-import actions from '../store/actions';
+import { AUTH } from '../store/actions';
 
 const initialState = {
     isAuthed: false,
@@ -6,7 +6,7 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    if (action.type == actions.AUTH) {
+    if (action.type === AUTH) {
         return {
             isAuthed: action.payload.isAuthed,
             user: action.payload.user

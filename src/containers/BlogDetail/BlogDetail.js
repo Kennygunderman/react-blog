@@ -11,20 +11,28 @@ import firebase from "../../firebase";
 
 class BlogDetail extends Component {
     state = {
-        comments: [],
-        item: null
+        comments: null,
+        isLoadingComments: false,
+        otherPosts: [],
+        isLoadingPosts: false,
+        item: null //this is the blog item the user is viewing
     }
 
-    commentsRef = firebase.firestore().collection("comments");
+    unsubscribeComments = null
+    unsubscribeBlogPosts = null
 
     componentDidMount() {
         const item = this.props.history.location.state.item;
-        this.setState({ isLoading: true });
-        this.commentsRef.onSnapshot((querySnapshot) => {
+        this.createSubscriptionsForItem(item);
+    }
+
+    createSubscriptionsForItem(item) {
+        this.setState({ isLoadingComments: true, comments: null, isLoadingPosts: true, item: item });
+        this.unsubscribeComments = firebase.firestore().collection("comments").onSnapshot((querySnapshot) => {
             const comments = [];
             querySnapshot.forEach((doc) => {
-                if (doc.data().postId === item.id) {
-                    const data = doc.data()
+                const data = doc.data();
+                if (data.postId === item.id) {
                     const comment = {
                         ...data,
                         date: new Date(data.date.seconds * 1000), //format date as it comes in from firebase
@@ -34,13 +42,57 @@ class BlogDetail extends Component {
                 }
             });
 
-            comments.sort((a, b) => b.date.getTime() - a.date.getTime())
-            this.setState({ isLoading: false, comments: comments, item: item });
+            comments.sort((a, b) => b.date.getTime() - a.date.getTime());
+            this.setState({
+                isLoadingComments: false,
+                comments: comments
+            });
+        });
+
+        this.unsubscribeBlogPosts = firebase.firestore().collection("posts").onSnapshot((querySnapshot) => {
+            const otherPosts = [];
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                if (doc.id !== item.id) {//don't show the post we are currently on
+                    const post = {
+                        ...data,
+                        date: new Date(data.date.seconds * 1000), //format data as it comes in from firebase
+                        id: doc.id
+                    }
+                    otherPosts.push(post);
+                }
+
+                otherPosts.sort((a, b) => b.date.getTime() - a.date.getTime());
+                this.setState({
+                    isLoadingPosts: false,
+                    otherPosts: otherPosts
+                });
+            });
         });
     }
 
+    createOtherPostsFeed() {
+        let blogItems = null;
+        if (this.state.otherPosts != null) {
+            blogItems = this.state.otherPosts.map((post) =>
+                <div key={post.id} className={classes.BlogCardSpacing}>
+                    <BlogItem hideImg={true} item={post} clickHandler={this.handleBlogItemClicked} />
+                </div>
+            );
+        }
+        return blogItems;
+    }
+
+    handleBlogItemClicked = (item) => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.props.history.push({ pathname: `/detail/${item.id}`, state: { item: item } });
+
+        this.unsubscribeComments();
+        this.unsubscribeBlogPosts();
+        this.createSubscriptionsForItem(item);
+    }
+
     render() {
-        console.log(this.state);
         return this.state.item != null ? (
             <Aux>
                 <DetailHeader title={this.state.item.title} image={this.state.item.image} />
@@ -52,17 +104,13 @@ class BlogDetail extends Component {
                                 date={this.state.item.date}>
                                 {ReactHtmlParser(this.state.item.summary)}
                             </DetailContent>
-                            <Comments comments={this.state.comments} postId={this.state.item.id} />
+                            {this.state.comments != null ? <Comments comments={this.state.comments} postId={this.state.item.id} /> : null}
                         </div>
                     </Grid>
                     <Grid item md={3} xs={12}>
                         <Typography variant="h6">Other Posts</Typography>
                         <div className={classes.Divider} />
-                        <div className={classes.BlogCardSpacing}><BlogItem hideImg={true} item={{ date: new Date(), title: "dummy", summary: "stupid stupid stupid stupid this is a dummy summary", image: '' }} /></div>
-                        <div className={classes.BlogCardSpacing}><BlogItem hideImg={true} item={{ date: new Date(), title: "dummy", summary: "stupid stupid stupid stupid this is a dummy summary", image: '' }} /></div>
-                        <div className={classes.BlogCardSpacing}><BlogItem hideImg={true} item={{ date: new Date(), title: "dummy", summary: "stupid stupid stupid stupid this is a dummy summary", image: '' }} /></div>
-                        <div className={classes.BlogCardSpacing}><BlogItem hideImg={true} item={{ date: new Date(), title: "dummy", summary: "stupid stupid stupid stupid this is a dummy summary", image: '' }} /></div>
-                        <div className={classes.BlogCardSpacing}><BlogItem hideImg={true} item={{ date: new Date(), title: "dummy", summary: "stupid stupid stupid stupid this is a dummy summary", image: '' }} /></div>
+                        {this.createOtherPostsFeed()}
                     </Grid>
                 </Grid>
             </Aux>

@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography, Box, Button } from '@material-ui/core';
 import { auth, signOut } from '../../auth/auth'
 import { connect } from 'react-redux';
-import actions from '../../store/actions';
+import { AUTH } from '../../store/actions';
 import firebase from '../../firebase';
 
 const handleAuth = (onAuthUser) => {
@@ -63,7 +63,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuthUser: (payload) => dispatch({ type: actions.AUTH, payload: payload })
+        onAuthUser: (payload) => dispatch({ type: AUTH, payload: payload })
     };
 };
 

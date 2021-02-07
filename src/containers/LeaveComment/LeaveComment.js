@@ -19,7 +19,7 @@ class LeaveComment extends Component {
         this.setState({ comment: "" })
         firebase
             .firestore()
-            .collection(`comments`)
+            .collection('comments')
             .doc(uuidv1())
             .set({
                 comment: this.state.comment,
