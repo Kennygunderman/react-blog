@@ -42,7 +42,7 @@ class LeaveComment extends Component {
                             fullWidth
                             multiline
                             rowsMax={4}
-                            inputProps={{ maxLength: this.props500 }}
+                            inputProps={{ maxLength: 500 }}
                             value={this.state.comment}
                             onChange={this.handleCommentChange}
                             label="Leave a comment..." />
