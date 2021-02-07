@@ -6,7 +6,12 @@
     border-radius: 50%;
 }
 
-.Container {
+.TextContainer {
     margin-top: 16px;
     margin-left: 66px;
+}
+
+.CommentButton {
+    margin-top: 8px !important;
+    float: right;
 }

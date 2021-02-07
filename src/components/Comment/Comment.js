@@ -1,17 +1,18 @@
-import { Card, CardContent, Typography, Hidden, CardMedia, CardActionArea } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+import Moment from 'react-moment';
 import classes from './Comment.css';
 const comment = (props) => (
     <div>
-        <img src='https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y' className={classes.ProfileImg} />
+        <img alt="" src={props.comment.profilePhotoUrl} className={classes.ProfileImg} />
         <div className={classes.Container}>
             <Typography>
-                <b> Kenny Gunderman</b>
+                <b>{props.comment.displayName}</b>
             </Typography>
             <Typography variant='body1' color="textSecondary" className={classes.Date}>
-                Mar. 21, 2021
+                <Moment format="MMM. D, YYYY">{props.comment.date}</Moment>
             </Typography>
             <Typography variant='body1'>
-                This is a dummy stupid comment! I love this feature. Its dope. LOL
+                {props.comment.comment}
             </Typography>
         </div>
     </div>

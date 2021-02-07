@@ -17,8 +17,10 @@ class Blog extends Component {
         this.postsRef.onSnapshot((querySnapshot) => {
             const items = [];
             querySnapshot.forEach((doc) => {
+                const data = doc.data()
                 const item = {
-                    ...doc.data(),
+                    ...data,
+                    date: new Date(data.date.seconds * 1000), //format data as it comes in from firebase
                     id: doc.id
                 }
                 items.push(item);
@@ -28,12 +30,12 @@ class Blog extends Component {
     }
 
     createBlogFeed() {
-        const sortedPosts = this.state.posts.sort((a, b) => b.date.seconds - a.date.seconds)
+        const sortedPosts = this.state.posts.sort((a, b) => b.date.getTime() - a.date.getTime())
         const blogItems = sortedPosts.map((post) => {
             const p = {
                 ...post
             }
-            p.date = new Date(post.date.seconds * 1000); //modify date to be used by component
+
             return (
                 <Grid item xs={12} md={6} key={p.id}>
                     <BlogItem item={p} clickHandler={this.handleBlogItemClicked} />
