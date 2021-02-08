@@ -9,7 +9,7 @@ const blogItem = (props) => (
         {
             props.hideImg != null && props.hideImg === true ? null :
                 <Hidden xsDown>
-                    <CardMedia className={classes.Media} image={props.item.image} title='Image Title' />
+                    <CardMedia className={classes.Media} image={props.item.thumbnail} title='Image Title' />
                 </Hidden>
         }
         <CardActionArea>
