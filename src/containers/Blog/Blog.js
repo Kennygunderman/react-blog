@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import BlogItem from '../../components/BlogItem/BlogItem';
 import FeaturedBlogItem from '../../components/FeaturedBlogItem/FeaturedBlogItem';
-import Grid from '@material-ui/core/Grid';
+import { Grid, Fade } from '@material-ui/core';
 import firebase from "../../firebase";
+import classes from './Blog.css';
 class Blog extends Component {
     state = {
         isLoading: false,
@@ -53,14 +54,19 @@ class Blog extends Component {
 
     //Show detail
     handleBlogItemClicked = (item) => {
-        this.props.history.push({ pathname: `/detail/${item.id}`, state: { item: item } });
+        this.props.history.push({ pathname: `/blog/detail/${item.id}`, state: { item: item } });
     }
 
     render() {
         return (
-            <Grid container spacing={3}>
-                {this.createBlogFeed()}
-            </Grid>
+            <Fade in timeout={{ enter: 1000 }}>
+                <div className={classes.Container}>
+                    <Grid container spacing={3}>
+                        {this.createBlogFeed()}
+                    </Grid >
+                    <div className={classes.Footer} />
+                </div>
+            </Fade>
         );
     }
 }

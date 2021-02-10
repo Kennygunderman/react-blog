@@ -1,0 +1,35 @@
+.Page {
+    opacity: 0;
+    transition: opacity 2.5s;
+    opacity: 1;
+    min-width: 100vh;
+    min-height: 100vh;
+    background-color: #263238;
+}
+
+.Center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+.BlogButton {
+    margin-top: 16px !important;
+}
+
+.BlogButtonHidden {
+    margin-top: 16px !important;
+    opacity: 0;
+}
+
+.WelcomeContainer {
+    top: 50%;
+    background-color: r;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    width: fit-content;
+}

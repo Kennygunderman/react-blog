@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import DetailContent from '../../components/DetailContent/DetailContent';
 import DetailHeader from '../../components/DetailHeader/DetailHeader';
-import Aux from '../../hoc/Auxiliary';
 import ReactHtmlParser from 'react-html-parser';
 import { Grid, Typography } from '@material-ui/core';
 import Comments from '../../components/Comments/Comments';
@@ -85,7 +84,7 @@ class BlogDetail extends Component {
 
     handleBlogItemClicked = (item) => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        this.props.history.push({ pathname: `/detail/${item.id}`, state: { item: item } });
+        this.props.history.push({ pathname: `/blog/detail/${item.id}`, state: { item: item } });
 
         this.unsubscribeComments();
         this.unsubscribeBlogPosts();
@@ -94,7 +93,7 @@ class BlogDetail extends Component {
 
     render() {
         return this.state.item != null ? (
-            <Aux>
+            <div className={classes.Container}>
                 <DetailHeader title={this.state.item.title} image={this.state.item.image} />
                 <Grid container spacing={0}>
                     <Grid item md={9} xs={12}>
@@ -113,7 +112,8 @@ class BlogDetail extends Component {
                         {this.createOtherPostsFeed()}
                     </Grid>
                 </Grid>
-            </Aux>
+                <div className={classes.Footer} />
+            </div>
         ) : null;
     }
 }
