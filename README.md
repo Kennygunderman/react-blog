@@ -3,7 +3,7 @@
 ### Getting started
 
 create a file named
-'firebase-config.js'
+`firebase-config.js`
 using the following template:
 
 ```
@@ -24,4 +24,17 @@ export default firebaseConfig;
 
 This app relies on the following Firestore schema:
 
-comments
+###### posts
+    - date
+    - image
+    - summary
+    - thumbnail
+    - title
+
+###### comments
+    - comment
+    - date
+    - displayName
+    - postId
+    - profilePhotorl
+    - uid
