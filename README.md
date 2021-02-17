@@ -2,7 +2,7 @@
 
 ### Getting started
 
-create a file named
+create a file in the root project directory named
 `firebase-config.js`
 using the following template:
 
