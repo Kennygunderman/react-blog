@@ -13,7 +13,7 @@ const firebaseConfig = {
     projectId: FIREBASE_PROJECT_ID_HERE,
     storageBucket: FIREBASE_STORAGE_BUCKET_HERE,
     messagingSenderId: FIREBASE_SENDER_ID_HERE,
-    appId: REACT_APP_FIREBASE_APP_ID_HERE,
+    appId: FIREBASE_APP_ID_HERE,
     measurementId: FIREBASE_MEASUREMENT_ID_HERE
 };
 
