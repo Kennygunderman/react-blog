@@ -3,12 +3,11 @@ import {Typography, Grid} from '@material-ui/core';
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import FeaturedWorkCard from '../../components/FeaturedWorkCard/FeaturedWorkCard'
 import FeaturedBlogItem from "../../components/FeaturedBlogItem/FeaturedBlogItem";
 import AboutMeDialog from "../../components/AboutMe/AboutMeDialog";
+import MyWork from "../../components/MyWork/MyWork";
 
 const Home = (props) => {
-    const google = "https://firebasestorage.googleapis.com/v0/b/web-app-d1952.appspot.com/o/portfolio-imgs%2FGC_NEXT-Blog-Header_V1.max-2200x2200.png?alt=media&token=d7991ec2-f82d-47bb-946c-1dbdd14d4ec1";
     const blogArchive = "https://firebasestorage.googleapis.com/v0/b/web-app-d1952.appspot.com/o/blog-imgs-min%2Fday_3_header.jpg?alt=media&token=3bf4aff2-e001-4359-8fa1-b89f94038bc6";
     return (
         <div>
@@ -33,19 +32,7 @@ const Home = (props) => {
                     <div className={classes.ContentSectionAlpha}>
                         <div className={classes.ContentSectionGradientTop}/>
                         <div className={classes.ContentSectionContainer}>
-                            <Typography variant="h4" color="secondary" style={{marginBottom: 24}}>MY
-                                WORK</Typography>
-                            <Grid container spacing={1}>
-                                <Grid item xs={12} md={6}>
-                                    <FeaturedWorkCard image={google} title={"Purina"}/>
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <FeaturedWorkCard image={google} title={"Google"}/>
-                                </Grid>
-                                <Grid item xs={12} md={12}>
-                                    <FeaturedWorkCard image={google} title={"TWO MEN AND A TRUCK"}/>
-                                </Grid>
-                            </Grid>
+                            <MyWork />
                         </div>
                         <div className={classes.ContentSectionGradientBottom}/>
                     </div>
