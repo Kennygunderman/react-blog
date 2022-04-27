@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { TextField, Button, Typography } from '@material-ui/core';
-import { v1 as uuidv1 } from 'uuid';
+import React, {Component} from 'react';
+import {TextField, Button, Typography} from '@material-ui/core';
+import {v1 as uuidv1} from 'uuid';
 import classes from './LeaveComment.css';
 import firebase from "../../firebase";
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 class LeaveComment extends Component {
     state = {
@@ -12,11 +12,11 @@ class LeaveComment extends Component {
 
     handleCommentChange = (event) => {
         const comment = event.target.value;
-        this.setState({ comment: comment });
+        this.setState({comment: comment});
     }
 
     leaveComment = () => {
-        this.setState({ comment: "" })
+        this.setState({comment: ""})
         firebase
             .firestore()
             .collection('comments')
@@ -36,16 +36,16 @@ class LeaveComment extends Component {
         return (
             this.props.isAuthed ?
                 <div>
-                    <img alt="" src={this.props.user.photoURL} className={classes.ProfileImg} />
+                    <img alt="" src={this.props.user.photoURL} className={classes.ProfileImg}/>
                     <div className={classes.TextContainer}>
                         <TextField
                             fullWidth
                             multiline
                             rowsMax={4}
-                            inputProps={{ maxLength: 500 }}
+                            inputProps={{maxLength: 500}}
                             value={this.state.comment}
                             onChange={this.handleCommentChange}
-                            label="Leave a comment..." />
+                            label="Leave a comment..."/>
                     </div>
                     <Button
                         onClick={this.leaveComment}
@@ -53,7 +53,7 @@ class LeaveComment extends Component {
                         variant="outlined"
                         className={classes.CommentButton}>
                         comment
-                </Button>
+                    </Button>
                 </div> :
                 <Typography variant="subtitle1">Log in to leave a comment!</Typography>
         )
