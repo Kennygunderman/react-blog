@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
-import {ThemeProvider, createTheme} from '@material-ui/core';
+import {ThemeProvider, createTheme} from '@material-ui/core'; // I am currently using both @material-ui & @mui deps. I need to update to only use one.
 import {createStore} from 'redux';
 import reducer from './store/reducer';
 import {Provider} from 'react-redux';
@@ -15,13 +15,14 @@ const store = createStore(reducer);
 //Application theme
 const theme = createTheme({
     typography: {
+        fontFamily: 'Avenir Next, Avenir Next Ultra Light',
         body1: {
             fontSize: 12,
         }
     },
     palette: {
         primary: {
-            main: '#263238'
+            main: '#1a1818'
         },
         secondary: {
             main: '#fafafa'
