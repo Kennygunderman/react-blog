@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6dd439ca-a4c6-4192-b0d3-ceca6e2c96fb" name="Default Changelist" comment="Update homepage">
-      <change afterPath="$PROJECT_DIR$/src/components/MyWork/MyWork.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MyWork/TMTDialog.js" afterDir="false" />
+    <list default="true" id="6dd439ca-a4c6-4192-b0d3-ceca6e2c96fb" name="Default Changelist" comment="Add my work component">
+      <change afterPath="$PROJECT_DIR$/src/assets/bg_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/learning_react.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/placeholder_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/placeholder_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/tmt_packing_form_1080.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/tmt_payment_1080.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/tmt_sig_1080.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/truck_company.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyWork/ImageCarousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FeaturedWorkCard/FeaturedWorkCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedWorkCard/FeaturedWorkCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyWork/MyWork.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyWork/MyWork.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyWork/TMTDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyWork/TMTDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,14 +94,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/kennygunderman/dev/react-blog/src/components",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kennygunderman/dev/react-blog/src/components&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
@@ -110,7 +122,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612465185830</updated>
-      <workItem from="1651064737133" duration="24523000" />
+      <workItem from="1651064737133" duration="37770000" />
+      <workItem from="1651115243621" duration="180000" />
     </task>
     <task id="LOCAL-00001" summary="Update formatting">
       <created>1651066534947</created>
@@ -126,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651100370284</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add my work component">
+      <created>1651102237332</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651102237333</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -177,7 +197,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update formatting" />
     <MESSAGE value="Update homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update homepage" />
+    <MESSAGE value="Add my work component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add my work component" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/hoc/Auxiliary.js">

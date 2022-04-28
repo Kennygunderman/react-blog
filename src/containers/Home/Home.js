@@ -6,9 +6,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FeaturedBlogItem from "../../components/FeaturedBlogItem/FeaturedBlogItem";
 import AboutMeDialog from "../../components/AboutMe/AboutMeDialog";
 import MyWork from "../../components/MyWork/MyWork";
+import backgroundImage from "../../assets/bg_1.jpg";
+import blogArchiveImage from "../../assets/learning_react.png";
 
 const Home = (props) => {
-    const blogArchive = "https://firebasestorage.googleapis.com/v0/b/web-app-d1952.appspot.com/o/blog-imgs-min%2Fday_3_header.jpg?alt=media&token=3bf4aff2-e001-4359-8fa1-b89f94038bc6";
     return (
         <div>
             <div className={classes.Hello}>
@@ -28,7 +29,7 @@ const Home = (props) => {
                 </div>
             </div>
             <div>
-                <div className={classes.ContentSection}>
+                <div className={classes.ContentSection} style={{backgroundImage: `url(${backgroundImage})`}}>
                     <div className={classes.ContentSectionAlpha}>
                         <div className={classes.ContentSectionGradientTop}/>
                         <div className={classes.ContentSectionContainer}>
@@ -48,7 +49,7 @@ const Home = (props) => {
                                         date: new Date(),
                                         title: "My experience learning React over 7 days.",
                                         summary: "In this blog archive, I spent 7 days learning React to see how far I could get in that time frame.",
-                                        image: blogArchive
+                                        image: blogArchiveImage
                                     }} clickHandler={() => props.history.push('/Blog')}/>
                                 </Grid>
                             </Grid>

@@ -18,7 +18,6 @@
 
 .ContentSection {
     background-size: cover;
-    background-image: url("https://images.nerdery.com/wp-content/uploads/2021/10/nerd-mug-sketching-table.jpg");
     transition: opacity 2.5s;
     opacity: 1;
     width: 100%;
