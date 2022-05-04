@@ -31,14 +31,14 @@ export default function TMTDialog(props) {
                 onClose={props.handleClose}
                 aria-describedby="alert-dialog-slide-description"
             >
-                <DialogTitle>{"MOVING COMPANY"}</DialogTitle>
+                <DialogTitle>{"TWO MEN AND A TRUCK"}</DialogTitle>
                 <ImageCarousel images={[signatureScreenImg, paymentScreenImg, formScreenImg]}/>
                 <div style={{marginLeft: '10%', width: '80%', marginTop: 16}}>
                     <Typography variant="body2"
                                 color="primary">{
-                        "During my time at Moving Company, I developed key features " +
-                        "for Moving Company's flagship Mobile Application - Digital Sales Order. Digital Sales Order " +
-                        "in a native Android app written in Kotlin with a heavy focus on offline support. " +
+                        "During my time at TWO MEN AND A TRUCK, I developed key features " +
+                        "for TWO MEN AND A TRUCK's flagship mobile application - Digital Sales Order. Digital Sales Order " +
+                        "is a native Android app written in Kotlin with a heavy focus on offline support. " +
                         "Digital Sales Order allows customers to agree to legal forms and make payments related to the services they purchases."
                     }</Typography>
                     <br/>

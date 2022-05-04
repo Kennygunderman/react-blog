@@ -1,37 +1,40 @@
-import {Card, CardContent, Typography, CardActionArea} from '@material-ui/core';
+import {Card, CardContent, Typography, CardActionArea, CardMedia} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 
 const FeaturedWorkCard = (props) => {
     const useStyles = makeStyles(theme => ({
-        cardItem: {
-            opacity: '0.95',
+        cardContent: {
             backgroundImage: `url(${props.image})`,
             backgroundSize: 'cover',
+            backgroundColor: 'transparent',
+            border: 'none',
             display: 'flex',
-            height: '200px',
             textAlign: 'center',
+            height: '200px',
             '&:hover': {
-                filter: 'grayscale(50%) blur(1px)',
+                filter: 'grayscale(100%)',
                 transition: '.4s ease-in-out',
             }
         },
-        text: {
-           color: '#fff',
+        cardText: {
+            color: '#1a1818',
         }
     }));
 
     const classes = useStyles();
 
-    return (<Card variant={"outlined"} onClick={() => props.clickHandler()} className={classes.cardItem}>
-        <CardActionArea>
-            <CardContent>
-                <Typography variant="h6" className={classes.text}>
-                    {props.title}
-                </Typography>
-            </CardContent>
-        </CardActionArea>
-    </Card>);
+    return (
+        <Card variant={"outlined"} onClick={() => props.clickHandler()} className={classes.cardContent}>
+            <CardActionArea>
+                <CardContent>
+                    <Typography variant="h6" className={classes.cardText}>
+                        {props.title}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>
+    );
 }
 
 FeaturedWorkCard.propTypes = {

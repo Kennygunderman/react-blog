@@ -1,7 +1,8 @@
 {
-  "name": "web-app",
-  "homepage": ".",
-  "version": "0.1.0",
+  "name": "kennygunderman-portfolio",
+  "homepage": "http://www.kennygundermandev.com",
+  "version": "1.0.0",
+  "description": "My Portfolio",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",

@@ -6,7 +6,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FeaturedBlogItem from "../../components/FeaturedBlogItem/FeaturedBlogItem";
 import AboutMeDialog from "../../components/AboutMe/AboutMeDialog";
 import MyWork from "../../components/MyWork/MyWork";
-import backgroundImage from "../../assets/bg_1.jpg";
+import backgroundImage1 from "../../assets/bg_1.jpg";
+import backgroundImage2 from "../../assets/bg_2.jpg";
 import blogArchiveImage from "../../assets/learning_react.png";
 
 const Home = (props) => {
@@ -29,7 +30,7 @@ const Home = (props) => {
                 </div>
             </div>
             <div>
-                <div className={classes.ContentSection} style={{backgroundImage: `url(${backgroundImage})`}}>
+                <div className={classes.ContentSection} style={{backgroundImage: `url(${backgroundImage1})`}}>
                     <div className={classes.ContentSectionAlpha}>
                         <div className={classes.ContentSectionGradientTop}/>
                         <div className={classes.ContentSectionContainer}>
@@ -38,7 +39,7 @@ const Home = (props) => {
                         <div className={classes.ContentSectionGradientBottom}/>
                     </div>
                 </div>
-                <div className={classes.ContentSection}>
+                <div className={classes.ContentSection} style={{backgroundImage: `url(${backgroundImage2})`}}>
                     <div className={classes.ContentSectionAlpha}>
                         <div className={classes.ContentSectionContainer}>
                             <Typography variant="h4" color="secondary"
@@ -48,7 +49,7 @@ const Home = (props) => {
                                     <FeaturedBlogItem item={{
                                         date: new Date(),
                                         title: "My experience learning React over 7 days.",
-                                        summary: "In this blog archive, I spent 7 days learning React to see how far I could get in that time frame.",
+                                        summary: "In this blog archive, I document my day by day experience of learning react over 7 days.",
                                         image: blogArchiveImage
                                     }} clickHandler={() => props.history.push('/Blog')}/>
                                 </Grid>
