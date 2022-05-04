@@ -1,0 +1,38 @@
+.FeaturedBlogCardItem {
+    margin-top: 24px;
+}
+
+.CardContent {
+    margin: 80px;
+}
+
+.Header {
+    width: 50%;
+    color: #f0f0f0 
+}
+
+.Desc {
+    padding-top: 24px;
+    width: 50%;
+    color: #f0f0f0;
+}
+
+@media (max-width: 720px) {
+    .Header {
+        width: 100%;
+    }
+    
+    .Desc {
+        padding-top: 24px;
+        width: 100%;
+    }
+}
+
+.Overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.ContinueReadingText {
+    padding-top: 24px;
+    color: #FFFFFF;
+}

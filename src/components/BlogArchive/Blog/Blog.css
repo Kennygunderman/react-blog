@@ -1,0 +1,19 @@
+.Container {
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+.Footer {
+    text-align: center;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom:25px;
+}
+
+
+@media (max-width: 1080px) {
+    .Container {
+        max-width: 90%;
+        margin-left: 5%;
+    }
+}
